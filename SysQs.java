@@ -11,14 +11,13 @@ public class SysQs {
         qList = new ArrayList<>();
     }
 
-    public Questions askQ(Users from , Users to , String q )
+    public void addQ(Users from , Users to , String q )
     {
         Questions Question = new Questions(from,to,q);
 
         qList.add(Question);
         from.incrementQ();
 
-        return Question;
     }
 
     public Questions findQ(int id)
@@ -45,5 +44,10 @@ public class SysQs {
                 q.printQ();
     }
 
+    public void printAllQs()
+    {
+        for(Questions Q : qList)
+            Q.printQ();
+    }
 
 }

@@ -45,6 +45,7 @@ public class Questions {
         System.out.println("Asked By: " + this.getUserFrom().getUserName());
         System.out.println("To:" + this.getUserTo().getUserName());
         System.out.println("Questions asked: " + this.getQ_text());
+        System.out.println("ID:" + this.QID);
     }
 
 }

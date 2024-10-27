@@ -6,12 +6,19 @@ public class SysUsers {
     private final ArrayList<Users> uList ;
 
 
-    SysUsers()
+   public SysUsers()
     {
         uList = new ArrayList<>();
     }
 
+    public Users addUser(String name, String email, String password, int age, char gender)
+    {
+        Users user = new Users(name,email,password,age,gender);
 
+        uList.add(user);
+        // create a new user object and add it to the users list (will be in signUp)
+        return user;
+    }
 
     public Users findUser(int id)
     {
@@ -33,7 +40,13 @@ public class SysUsers {
         return null;
     }
 
-
+    public  Users findUser(String emailOrUserName)
+    {
+        for(Users user : uList)
+            if (emailOrUserName.equals(user.getEmail()) || emailOrUserName.equals(user.getUserName()))
+                return user;
+        return null;
+    }
 
     public Users deleteUser(String emailOrUserName , String password ){
 
